@@ -26,9 +26,10 @@
             <p id="card-number" style="color: hsl(0, 0%, 100%); font-size: 22px; font-weight: 500; letter-spacing: 2px; padding-top: 50px;">0000 0000 0000 0000</p>
             </div>
             <div class="jane" style="display:flex; gap: 80px; padding-top: 20px">
-             <p id="card-name" style="color: hsl(0, 0%, 100%); font-size: 15px; font-weight: 500; ">JANE APPESEED</p>
+             <h2 id="card-name" style="color: hsl(0, 0%, 100%); font-size: 1rem; font-weight: 500;">JANE APPESEED</h2>
              <div style="display: flex; gap: 3px">
                  <P id="card-month" style="color: hsl(0, 0%, 100%);font-weight: 500; font-size: 15px; ">00</P>
+                 <P id="card-month" style="color: hsl(0, 0%, 100%);font-weight: 500; font-size: 15px; ">/</P>
                  <p id="card-year" style="color: hsl(0, 0%, 100%);font-weight: 500; font-size: 15px; ">00</p>
              </div>
             </div>
@@ -84,7 +85,7 @@
 
             <div class="form-number" style="display: flex; flex-direction: column; letter-spacing: 1px;">
                 <label for="number">CARD NUMBER</label>
-                <input type="text" id="input-number" name="cardnumber" placeholder="e.g 1234 5678 9123 000" maxlength="12" required>
+                <input type="text" id="input-number" name="cardnumber" placeholder="e.g 1234 5678 9123 000" maxlength="19" required>
                 <span class="first-span">Wrong format, numbers only</span>
             </div>
 
@@ -103,13 +104,19 @@
                     <span class="third-span">Can't be blank</span>
                 </div>
             </div>
-
+            
+            <!-- <div id="complete" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 20px; display: none;">
+                <div><img src="./images/icon-complete.svg" alt="" width="70px"></div>
+                <h2 style="text-align: center; padding-bottom: 15px;">THANK YOU!</h2>
+                <P style="text-align: center;">We've added your card details</P>
+               </div>
+               <button type="submit" id="submit">Confirm</button> -->
 
         </form>
         <div id="complete" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 20px; display: none;">
             <div><img src="./images/icon-complete.svg" alt="" width="70px"></div>
-            <h2>THANK YOU!</h2>
-            <P>We've added your card details</P>
+            <h2 id="sucess" style="text-align: center; padding-bottom: 15px;">THANK YOU!</h2>
+            <P style="text-align: center;">We've added your card details</P>
            </div>
            <button type="submit" id="submit">Confirm</button>
        </div>

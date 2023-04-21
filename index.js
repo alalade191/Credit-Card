@@ -19,11 +19,15 @@ let formCvc = document.querySelector("#input-cvc");
 let action = document.querySelector("#submit");
 let form = document.querySelector('#form')
 let complete = document.querySelector('#complete')
+let sucess = document.querySelector('#sucess')
+
+// FORM NAMES
+let nameDetails = document.querySelector('.form-name')
 
 
 formName.addEventListener("input", (e) => {
   let formNameResult = e.target.value;
-  let regexName = /^[A-Z]+$/
+  let regexName = /^[A-Za-z\W]+$/g
   let endResult = regexName.test(formNameResult)
   if(!endResult){
     errormessage.style.display = 'block';
@@ -56,7 +60,7 @@ formName.addEventListener("input", (e) => {
 
 formNumber.addEventListener('input', (e) => {
   let formNumResult = e.target.value;
-  let express = /^[0-9]+$/
+  let express = /^[0-9\W]+$/g
   let output = express.test(formNumResult)
   if(!output){
     errormessage.style.display = 'block';
@@ -130,7 +134,42 @@ formCvc.addEventListener('input', (e) => {
 
 
 action.addEventListener('click', () => {
-  form.style.display = 'none'
-  complete.style.display = 'block'
-  action.textContent = 'Continue'
+  if (formName.value === '') {
+    errormessage.style.display = 'block';
+    formName.style.border = '1px solid red'
+  }else if(formNumber.value === ''){
+    errormessage.style.display = 'block';
+    formNumber.style.border = '1px solid red'
+  }else if(formMonth.value === ''){
+    formNumber.style.border = '1px solid red'
+    secondErrorMessage.style.display = 'block'
+  }else if(formYear.value === ''){
+    formNumber.style.border = '1px solid red'
+    secondErrorMessage.style.display = 'block'
+  }else if(formCvc.value === ''){
+    formCvc.style.border = '1px solid red'
+    thirdErrorMessage.style.display = 'block'
+  }else{
+    form.style.display = 'none'
+   complete.style.display = 'block'
+   action.textContent = 'Continue'
+   sucess.textContent = `THANK YOU ${formNameResult}`
+  }
+  // form.style.display = 'none'
+  // complete.style.display = 'block'
+  // action.textContent = 'Continue'
+  // sucess.innerHTML = `HEY YOU`
+  // sucess.textContent = `THANK YOU ${}!`
 })
+
+
+
+// formName
+// formNumber
+// formMonth 
+// formYear
+// formCvc
+// action
+// form
+// complete
+// sucess

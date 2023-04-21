@@ -193,6 +193,13 @@ label{
     color: hsl(278, 68%, 11%);
 }
 
+#complete div img{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0 auto;
+padding-bottom: 15px;
+}
 @media screen and (max-width: 480px){
 .flex{
     display: flex;
@@ -232,6 +239,7 @@ label{
     display: flex;
     flex-direction: column-reverse;
     padding-left: 0;
+    /* padding-right: 30px; */
     padding-top: 30px;
     /* padding: 20px; */
 }
@@ -259,21 +267,19 @@ button[type = "submit"] {
     /* width: 360px; */
     width: 100%;
     margin-top: -100px;
-    margin-left: 40px;
+    margin-left: 20px;
     border-radius: 5px;
-    /* overflow-x: hidden; */
     padding: 15px;
     background: radial-gradient(farthest-corner at -240px 40px, orange, purple, blue);
 }
 .card2a{
-    margin-left: 80px;
+    margin-left: 60px;
     /* margin-bottom: 70px; */
     height: 180px;
     width: 83%;
     /* width: 100%; */
     padding-top: 10px;
     border-radius: 5px;
-    /* overflow-x: hidden; */
     background-color: #e7e8e6;
 }
 }
