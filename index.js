@@ -14,12 +14,12 @@ let thirdErrorMessage = document.querySelector(".third-span")
 let formName = document.querySelector("#input-name");
 let formNumber = document.querySelector("#input-number");
 let formMonth = document.querySelector("#input-month");
-let formYear = document.querySelector("#input-year");
 let formCvc = document.querySelector("#input-cvc");
 let action = document.querySelector("#submit");
 let form = document.querySelector('#form')
 let complete = document.querySelector('#complete')
 let sucess = document.querySelector('#sucess')
+let letter = document.querySelector('.letter-span')
 
 // FORM NAMES
 let nameDetails = document.querySelector('.form-name')
@@ -32,31 +32,14 @@ formName.addEventListener("input", (e) => {
   if(!endResult){
     errormessage.style.display = 'block';
     formName.style.border = '1px solid red'
-  }else{
+   } 
+  else{
     errormessage.style.display = 'none';
     formName.style.border = '1px solid green'
     cardName.textContent = formNameResult;
   }
 });
 
-
-
-
-
-// formNumber.addEventListener("input", (e) => {
-//   let formNumResult = e.target.value;
-//   Array(formNumResult).forEach((item) => {
-//     if (isNaN(Number(item))) {
-//       errormessage.style.display = "block";
-//       formNumber.style.border = "1px solid red";
-      
-//     } else {
-//       errormessage.style.display = "none";
-//       formNumber.style.border = "1px solid green";
-//       cardNumber.textContent = formNumResult
-//     }
-//   });
-// });
 
 formNumber.addEventListener('input', (e) => {
   let formNumResult = e.target.value;
@@ -75,47 +58,19 @@ formNumber.addEventListener('input', (e) => {
 
 formMonth.addEventListener('input', (e) => {
   let formMonResult = e.target.value
-  let regexmonth  = /^[0-9]+$/
-  let regexmonthresult = regexmonth.test(formMonResult)
-  if(!regexmonthresult){
-    formNumber.style.border = '1px solid red'
-    secondErrorMessage.style.display = 'block'
-  }else{
-    formMonth.style.border = '1px solid green'
-    secondErrorMessage.style.display = 'none'
-    cardMonth.textContent = formMonResult
-  }
+  cardMonth.textContent = formMonResult
+  // let regexmonth  = /^[0-9]+$/
+  // let regexmonthresult = regexmonth.test(formMonResult)
+  // if(!regexmonthresult){
+  //   formNumber.style.border = '1px solid red'
+  //   secondErrorMessage.style.display = 'block'
+  // }else{
+  //   formMonth.style.border = '1px solid green'
+  //   secondErrorMessage.style.display = 'none'
+  //   cardMonth.textContent = formMonResult
+  // }
 })
 
-
-formYear.addEventListener('input', (e) => {
-  let formyearResult = e.target.value
-  let regexyear  = /^[0-9]+$/
-  let regexyearresult = regexyear.test(formyearResult)
-  if(!regexyearresult){
-    formNumber.style.border = '1px solid red'
-    secondErrorMessage.style.display = 'block'
-  }else{
-    formYear.style.border = '1px solid green'
-    secondErrorMessage.style.display = 'none'
-    cardYear.textContent = formyearResult
-  }
-})
-
-
-formYear.addEventListener('input', (e) => {
-  let formyearResult = e.target.value
-  let regexyear  = /^[0-9]+$/
-  let regexyearresult = regexyear.test(formyearResult)
-  if(!regexyearresult){
-    formNumber.style.border = '1px solid red'
-    secondErrorMessage.style.display = 'block'
-  }else{
-    formYear.style.border = '1px solid green'
-    secondErrorMessage.style.display = 'none'
-    cardYear.textContent = formyearResult
-  }
-})
 
 
 formCvc.addEventListener('input', (e) => {
@@ -143,33 +98,28 @@ action.addEventListener('click', () => {
   }else if(formMonth.value === ''){
     formNumber.style.border = '1px solid red'
     secondErrorMessage.style.display = 'block'
-  }else if(formYear.value === ''){
-    formNumber.style.border = '1px solid red'
-    secondErrorMessage.style.display = 'block'
-  }else if(formCvc.value === ''){
+  }
+  
+  else if(formCvc.value === ''){
     formCvc.style.border = '1px solid red'
     thirdErrorMessage.style.display = 'block'
-  }else{
+  }else if((formName.value).length !== 16){
+    letter.style.display = 'block'
+    formName.style.border = '1px solid red'
+  }
+  else if((formNumber.value).length !== 19){
+    errormessage.style.display = 'block'
+    errormessage.textContent = 'Numbers must be up to 19'
+    formNumber.style.border = '1px solid red'
+  }
+  
+  
+  else{
     form.style.display = 'none'
    complete.style.display = 'block'
    action.textContent = 'Continue'
-   sucess.textContent = `THANK YOU ${formNameResult}`
+   action.addEventListener('click', () => {
+    window.location.reload()
+   })
   }
-  // form.style.display = 'none'
-  // complete.style.display = 'block'
-  // action.textContent = 'Continue'
-  // sucess.innerHTML = `HEY YOU`
-  // sucess.textContent = `THANK YOU ${}!`
 })
-
-
-
-// formName
-// formNumber
-// formMonth 
-// formYear
-// formCvc
-// action
-// form
-// complete
-// sucess
