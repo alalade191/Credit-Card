@@ -103,9 +103,6 @@ action.addEventListener('click', () => {
   else if(formCvc.value === ''){
     formCvc.style.border = '1px solid red'
     thirdErrorMessage.style.display = 'block'
-  }else if((formName.value).length < 11){
-    letter.style.display = 'block'
-    formName.style.border = '1px solid red'
   }
   else if((formNumber.value).length !== 19){
     errormessage.style.display = 'block'
