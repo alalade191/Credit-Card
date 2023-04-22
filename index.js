@@ -93,7 +93,8 @@ action.addEventListener('click', () => {
   if (formName.value === '') {
     letter.style.display = 'block';
     formName.style.border = '1px solid red'
-  }else if(formNumber.value === ''){
+  }
+  else if(formNumber.value === ''){
     errormessage.style.display = 'block';
     formNumber.style.border = '1px solid red'
   }else if(formMonth.value === ''){
