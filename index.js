@@ -30,7 +30,7 @@ formName.addEventListener("input", (e) => {
   let regexName = /^[A-Za-z\W]+$/g
   let endResult = regexName.test(formNameResult)
   if(!endResult){
-    errormessage.style.display = 'block';
+    letter.style.display = 'block';
     formName.style.border = '1px solid red'
    } 
   else{
@@ -90,7 +90,7 @@ formCvc.addEventListener('input', (e) => {
 
 action.addEventListener('click', () => {
   if (formName.value === '') {
-    errormessage.style.display = 'block';
+    letter.style.display = 'block';
     formName.style.border = '1px solid red'
   }else if(formNumber.value === ''){
     errormessage.style.display = 'block';

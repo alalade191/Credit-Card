@@ -30,8 +30,6 @@
              <h2 id="card-name" style="color: hsl(0, 0%, 100%); font-size: 1rem; font-weight: 500;">JANE APPESEED</h2>
              <div style="display: flex; gap: 3px">
                  <P id="card-month" style="color: hsl(0, 0%, 100%);font-weight: 500; font-size: 15px; ">00</P>
-                 <!-- <P id="card-month" style="color: hsl(0, 0%, 100%);font-weight: 500; font-size: 15px; ">/</P>
-                 <p id="card-year" style="color: hsl(0, 0%, 100%);font-weight: 500; font-size: 15px; ">00</p> -->
              </div>
             </div>
         </div>
@@ -81,7 +79,7 @@
             <div class="form-name" style="display: flex; flex-direction: column; letter-spacing: 1px;">
                 <label for="name">CARDHOLDER NAME</label>
                 <input type="text" id="input-name" name="cardholder" placeholder="e.g Jane Appleseed" required>
-                <span class="letter-span">Letters must be greater than 11</span>
+                <span class="letter-span">Field can't be empty</span>
             </div>
 
             <div class="form-number" style="display: flex; flex-direction: column; letter-spacing: 1px;">
@@ -90,12 +88,11 @@
                 <span class="first-span">Wrong format, numbers only</span>
             </div>
 
-            <div class="form-date-container" style="display: flex; gap: 18px;">
+            <div class="form-date-container" style="display: flex; gap: 58px;">
                 <div style="display: flex; flex-direction: column;">
-                    <label for="calendar">EXP. DATE(MM/YY)</label>
+                    <label for="calendar">EXP. DATE</label>
                         <div class="form-month" style="display: flex; gap: 10px;">
                             <input type="month" id="input-month" placeholder="MM" required>
-                            <!-- <input type="text" id="input-year" placeholder="YY" maxlength="2" required> -->
                         </div>
                         <span class="second-span">Can't be blank</span>
                 </div>
@@ -106,12 +103,6 @@
                 </div>
             </div>
             
-            <!-- <div id="complete" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 20px; display: none;">
-                <div><img src="./images/icon-complete.svg" alt="" width="70px"></div>
-                <h2 style="text-align: center; padding-bottom: 15px;">THANK YOU!</h2>
-                <P style="text-align: center;">We've added your card details</P>
-               </div>
-               <button type="submit" id="submit">Confirm</button> -->
 
         </form>
         <div id="complete" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 20px; display: none;">
