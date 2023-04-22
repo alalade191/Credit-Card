@@ -20,6 +20,7 @@ let form = document.querySelector('#form')
 let complete = document.querySelector('#complete')
 let sucess = document.querySelector('#sucess')
 let letter = document.querySelector('.letter-span')
+let getName = document.querySelector('#getname')
 
 // FORM NAMES
 let nameDetails = document.querySelector('.form-name')
@@ -30,7 +31,7 @@ formName.addEventListener("input", (e) => {
   let regexName = /^[A-Za-z\W]+$/g
   let endResult = regexName.test(formNameResult)
   if(!endResult){
-    letter.style.display = 'block';
+    errormessage.style.display = 'block';
     formName.style.border = '1px solid red'
    } 
   else{
@@ -110,8 +111,8 @@ action.addEventListener('click', () => {
     formNumber.style.border = '1px solid red'
   }
   
-  
   else{
+    getName.textContent = formName.value
     form.style.display = 'none'
    complete.style.display = 'block'
    action.textContent = 'Continue'
